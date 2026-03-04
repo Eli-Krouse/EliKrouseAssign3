@@ -16,6 +16,8 @@ class ViewController: UIViewController
     
     @IBOutlet weak var ReviewButton: UIButton!
     
+    var stars: Int? = nil
+    
     @IBAction func postReviewButton(_ sender: Any)
     {
         guard let stars = stars else
@@ -24,8 +26,8 @@ class ViewController: UIViewController
             reviewPageReviewLabel.text = "please select a star 1-5"
             return
         }
-        reviewPageReviewLabel.text = String(stars) + " / 5 Stars"
-        landingPageReviewLabel.text = String(stars) + " / 5 Stars"
+        reviewPageReviewLabel.text = "\(stars)  / 5 Stars"
+        landingPageReviewLabel.text = "\(stars) / 5 Stars"
     }
     
     
@@ -44,85 +46,59 @@ class ViewController: UIViewController
     @IBOutlet weak var starFiveButton: UIButton!
     
     
-    var stars: Int?
+    
+    var starButtons: [UIButton] = []
     
     
-    
-    
-    @IBAction func starTapped(_ sender: UIButton)
-    {
-        switch(sender)
-        {
-            case starOneButton:
-                stars = 1
-                
-            case starTwoButton:
-                stars = 2
-            
-            case starThreeButton:
-                stars = 3
-            
-            case starFourButton:
-                stars = 4
-            
-            case starFiveButton:
-                stars = 5
-            
-            default:
-                return
-            
-        }
-    }
-    
-    func fillStars(_ toFill: Int)
-    {
-        starButtonsUnfill()
-        
-        if(toFill >= 1)
-        {
-            starOneButton.setImage(UIImage(systemName: "star.fill"), for: UIControl.State.normal)
-            if(toFill >= 2)
-            {
-                starTwoButton.setImage(UIImage(systemName: "star.fill"), for: UIControl.State.normal)
-                
-                if(toFill >= 3)
-                {
-                    starThreeButton.setImage(UIImage(systemName: "star.fill"), for: UIControl.State.normal)
-                    
-                    if(toFill >= 4)
-                    {
-                        starFourButton.setImage(UIImage(systemName: "star.fill"), for: UIControl.State.normal)
-                        
-                        if(toFill == 5)
-                        {
-                            starFiveButton.setImage(UIImage(systemName: "star.fill"), for: UIControl.State.normal)
-                            
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-    func starButtonsUnfill()
-    {
-        starOneButton.setImage(UIImage(systemName: "star"), for: UIControl.State.normal)
-        starTwoButton.setImage(UIImage(systemName: "star"), for: UIControl.State.normal)
-        starThreeButton.setImage(UIImage(systemName: "star"), for: UIControl.State.normal)
-        starFourButton.setImage(UIImage(systemName: "star"), for: UIControl.State.normal)
-        starFiveButton.setImage(UIImage(systemName: "star"), for: UIControl.State.normal)
-        
-    }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //starButtonsUnfill()
+            starButtons = [
+                starOneButton,
+                starTwoButton,
+                starThreeButton,
+                starFourButton,
+                starFiveButton
+            ]
+            
+            self.updateStars(0)
+        
         
     }
-
-
+    
+    
+    @IBAction func starTapped(_ sender: UIButton)
+        {
+            guard let index = starButtons.firstIndex(of: sender) else
+            {
+                return
+            }
+            
+            stars = index + 1
+            
+            if let stars = stars
+            {
+                updateStars(stars)
+            }
+        }
+        
+        func updateStars(_ rating: Int)
+        {
+            for(index, button) in starButtons.enumerated()
+            {
+                
+                if(index < rating)
+                {
+                    button.setImage(UIImage(systemName: "star.fill"), for: .normal)
+                }
+                else
+                {
+                    button.setImage(UIImage(systemName: "star"), for: .normal)
+                }
+            }
+        }
 }
 

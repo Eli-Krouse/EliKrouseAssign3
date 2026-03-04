@@ -11,7 +11,7 @@
         <!--Navigation Controller-->
         <scene sceneID="F7v-ce-Mv1">
             <objects>
-                <navigationController id="Ebx-rr-ayq" sceneMemberID="viewController">
+                <navigationController id="Ebx-rr-ayq" customClass="NavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" alpha="0.5" contentMode="scaleToFill" id="ROO-QL-6nn">
                         <rect key="frame" x="0.0" y="118" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -102,7 +102,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="cIY-eY-4Ec" kind="presentation" id="zlM-Hw-t68"/>
+                                    <segue destination="cIY-eY-4Ec" kind="showDetail" id="Ioh-BB-edZ"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeG-ce-LnF">
@@ -158,7 +158,7 @@
         <!--RecipeView-->
         <scene sceneID="L5e-3b-cgS">
             <objects>
-                <viewController title="RecipeView" id="p7N-VU-11Q" sceneMemberID="viewController">
+                <viewController title="RecipeView" id="p7N-VU-11Q" customClass="ViewController" customModule="EliKrouseAssign3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fuf-2v-zRY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -269,46 +269,46 @@ Bake until the crust is golden-brown and the cheese is melted and browned in spo
                                 <color key="highlightedColor" systemColor="secondarySystemBackgroundColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UNB-ZZ-gXJ">
-                                <rect key="frame" x="9" y="137" width="375" height="34.333333333333343"/>
+                                <rect key="frame" x="9" y="137" width="120" height="14"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2KB-JS-dSU">
-                                        <rect key="frame" x="0.0" y="0.0" width="75" height="34.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="14"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=""/>
                                         <connections>
-                                            <action selector="starTapped:" destination="cIY-eY-4Ec" eventType="touchUpInside" id="wlm-K4-aEM"/>
+                                            <action selector="starTapped:" destination="cIY-eY-4Ec" eventType="touchUpInside" id="thG-ur-eXq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f71-3T-ApQ">
-                                        <rect key="frame" x="75" y="0.0" width="75" height="34.333333333333336"/>
+                                        <rect key="frame" x="24" y="0.0" width="24" height="14"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=""/>
                                         <connections>
-                                            <action selector="starTapped:" destination="cIY-eY-4Ec" eventType="touchUpInside" id="Jk9-Lg-rlI"/>
+                                            <action selector="starTapped:" destination="cIY-eY-4Ec" eventType="touchUpInside" id="yGN-Td-Ezh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yuF-qF-aLr">
-                                        <rect key="frame" x="150" y="0.0" width="75" height="34.333333333333336"/>
+                                        <rect key="frame" x="48" y="0.0" width="24" height="14"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=""/>
                                         <connections>
-                                            <action selector="starTapped:" destination="cIY-eY-4Ec" eventType="touchUpInside" id="ZIS-Gk-gMP"/>
+                                            <action selector="starTapped:" destination="cIY-eY-4Ec" eventType="touchUpInside" id="WxG-Ra-oeJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyH-SE-SEL">
-                                        <rect key="frame" x="225" y="0.0" width="75" height="34.333333333333336"/>
+                                        <rect key="frame" x="72" y="0.0" width="24" height="14"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=""/>
                                         <connections>
-                                            <action selector="starTapped:" destination="cIY-eY-4Ec" eventType="touchUpInside" id="GRE-OD-R47"/>
+                                            <action selector="starTapped:" destination="cIY-eY-4Ec" eventType="touchUpInside" id="KXh-mM-Xqb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHL-2i-7Kl">
-                                        <rect key="frame" x="300" y="0.0" width="75" height="34.333333333333336"/>
+                                        <rect key="frame" x="96" y="0.0" width="24" height="14"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=""/>
                                         <connections>
-                                            <action selector="starTapped:" destination="cIY-eY-4Ec" eventType="touchUpInside" id="3IY-fA-ykq"/>
+                                            <action selector="starTapped:" destination="cIY-eY-4Ec" eventType="touchUpInside" id="4M6-1O-MA7"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -318,6 +318,11 @@ Bake until the crust is golden-brown and the cheese is melted and browned in spo
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Enter Review"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="postReviewButton:" destination="cIY-eY-4Ec" eventType="touchUpInside" id="bnl-wf-Hme"/>
                                 </connections>
@@ -326,37 +331,35 @@ Bake until the crust is golden-brown and the cheese is melted and browned in spo
                         <viewLayoutGuide key="safeArea" id="wut-Gv-OSK"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
-                            <constraint firstItem="MaE-LR-GzC" firstAttribute="centerY" secondItem="yYU-cI-YTi" secondAttribute="centerY" id="2cM-PB-6yd"/>
-                            <constraint firstItem="UNB-ZZ-gXJ" firstAttribute="top" secondItem="uAY-R8-Yy0" secondAttribute="bottom" constant="71" id="2y8-Qy-z52"/>
-                            <constraint firstItem="MaE-LR-GzC" firstAttribute="top" secondItem="BSI-Rt-vDu" secondAttribute="bottom" constant="69" id="6eL-56-umV"/>
-                            <constraint firstItem="uAY-R8-Yy0" firstAttribute="top" secondItem="wut-Gv-OSK" secondAttribute="top" constant="30" id="JNm-ME-Ggp"/>
-                            <constraint firstItem="BSI-Rt-vDu" firstAttribute="leading" secondItem="MaE-LR-GzC" secondAttribute="leading" id="LEf-hq-lJc"/>
-                            <constraint firstItem="UNB-ZZ-gXJ" firstAttribute="leading" secondItem="wut-Gv-OSK" secondAttribute="leading" constant="9" id="OwD-cn-POa"/>
-                            <constraint firstItem="UNB-ZZ-gXJ" firstAttribute="centerX" secondItem="BSI-Rt-vDu" secondAttribute="centerX" id="P1w-tD-Uok"/>
-                            <constraint firstItem="uAY-R8-Yy0" firstAttribute="centerX" secondItem="yYU-cI-YTi" secondAttribute="centerX" id="ZLQ-yo-ihn"/>
-                            <constraint firstItem="uAY-R8-Yy0" firstAttribute="leading" secondItem="wut-Gv-OSK" secondAttribute="leading" constant="53" id="ack-eO-CKv"/>
-                            <constraint firstItem="BSI-Rt-vDu" firstAttribute="trailing" secondItem="MaE-LR-GzC" secondAttribute="trailing" id="efB-Lm-S7E"/>
-                            <constraint firstItem="wut-Gv-OSK" firstAttribute="bottom" secondItem="MaE-LR-GzC" secondAttribute="bottom" constant="343" id="qCh-b6-AGL"/>
+                            <constraint firstItem="UNB-ZZ-gXJ" firstAttribute="top" secondItem="uAY-R8-Yy0" secondAttribute="bottom" constant="71" id="2Dn-FG-E5R"/>
+                            <constraint firstItem="wut-Gv-OSK" firstAttribute="bottom" secondItem="MaE-LR-GzC" secondAttribute="bottom" constant="343" id="3S8-ov-djf"/>
+                            <constraint firstItem="BSI-Rt-vDu" firstAttribute="leading" secondItem="MaE-LR-GzC" secondAttribute="leading" id="3be-Zy-dWN"/>
+                            <constraint firstItem="uAY-R8-Yy0" firstAttribute="leading" secondItem="wut-Gv-OSK" secondAttribute="leading" constant="53" id="3ig-q3-GHX"/>
+                            <constraint firstItem="UNB-ZZ-gXJ" firstAttribute="leading" secondItem="wut-Gv-OSK" secondAttribute="leading" constant="9" id="6Cv-0n-7rj"/>
+                            <constraint firstItem="MaE-LR-GzC" firstAttribute="top" secondItem="BSI-Rt-vDu" secondAttribute="bottom" constant="69" id="7kV-oe-5FD"/>
+                            <constraint firstItem="BSI-Rt-vDu" firstAttribute="trailing" secondItem="MaE-LR-GzC" secondAttribute="trailing" id="URz-O1-dSP"/>
+                            <constraint firstItem="uAY-R8-Yy0" firstAttribute="top" secondItem="wut-Gv-OSK" secondAttribute="top" constant="30" id="cUl-In-1NQ"/>
+                            <constraint firstItem="uAY-R8-Yy0" firstAttribute="centerX" secondItem="BSI-Rt-vDu" secondAttribute="centerX" id="vQi-ms-xa7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Recipe Book Review" id="8rY-gh-Bv9"/>
                     <connections>
                         <outlet property="reviewPageReviewLabel" destination="MaE-LR-GzC" id="7PT-uK-SW9"/>
-                        <outlet property="starFiveButton" destination="tHL-2i-7Kl" id="ao4-dy-o18"/>
-                        <outlet property="starFourButton" destination="AyH-SE-SEL" id="E5c-aH-gVG"/>
-                        <outlet property="starOneButton" destination="2KB-JS-dSU" id="nB4-DO-q6P"/>
-                        <outlet property="starThreeButton" destination="yuF-qF-aLr" id="pyx-DX-zwi"/>
-                        <outlet property="starTwoButton" destination="f71-3T-ApQ" id="w1P-tI-qKW"/>
+                        <outlet property="starFiveButton" destination="tHL-2i-7Kl" id="yir-ij-8aS"/>
+                        <outlet property="starFourButton" destination="AyH-SE-SEL" id="Q1x-9I-me6"/>
+                        <outlet property="starOneButton" destination="2KB-JS-dSU" id="Uti-Yr-kQI"/>
+                        <outlet property="starThreeButton" destination="yuF-qF-aLr" id="Lhn-04-Ywi"/>
+                        <outlet property="starTwoButton" destination="f71-3T-ApQ" id="FoA-ac-SRZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gEr-mP-B4w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1177.8625954198474" y="-18.30985915492958"/>
+            <point key="canvasLocation" x="1199" y="-18"/>
         </scene>
         <!--RecipeView-->
         <scene sceneID="kV4-SC-GQ5">
             <objects>
-                <viewController title="RecipeView" id="1tl-nu-YlY" sceneMemberID="viewController">
+                <viewController title="RecipeView" id="1tl-nu-YlY" customClass="ViewController" customModule="EliKrouseAssign3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QPQ-xu-pYl">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -444,7 +447,7 @@ Note: To finish cooking this beef stew on the stovetop, cover the pot and let it
         <!--RecipeView-->
         <scene sceneID="YzK-ER-pPI">
             <objects>
-                <viewController title="RecipeView" id="KR1-fm-3Pj" sceneMemberID="viewController">
+                <viewController title="RecipeView" id="KR1-fm-3Pj" customClass="ViewController" customModule="EliKrouseAssign3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qmd-0T-j9G">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
