@@ -34,13 +34,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" fixedFrame="YES" image="pngtree-cooking-cooking-background-picture-image_500149" translatesAutoresizingMaskIntoConstraints="NO" id="0Tm-1m-NhF">
+                                <rect key="frame" x="-89" y="54" width="543" height="851"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48w-5t-w8N">
                                 <rect key="frame" x="16" y="267" width="361" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="YRd-w2-aHr"/>
                                 </constraints>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Recipe 1"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Pizza Recipe"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="12"/>
@@ -55,26 +60,34 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="Zmn-ZK-PZS"/>
                                 </constraints>
+                                <color key="tintColor" systemColor="systemBrownColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Recipe 2"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Stew"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="1tl-nu-YlY" kind="show" id="IdY-vZ-xZ8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePT-4H-MSD">
                                 <rect key="frame" x="16" y="447" width="361" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="caO-WJ-Jz6"/>
                                 </constraints>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Recipe 3"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Chicken Quesadillas"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="KR1-fm-3Pj" kind="show" id="0Fa-aG-hJ8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0z-rZ-Hri">
                                 <rect key="frame" x="16" y="536" width="361" height="65"/>
@@ -82,12 +95,15 @@
                                     <constraint firstAttribute="height" constant="65" id="tzA-tR-PtO"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Recipe 4"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Review this Recipe Book"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="cIY-eY-4Ec" kind="presentation" id="zlM-Hw-t68"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeG-ce-LnF">
                                 <rect key="frame" x="16" y="609" width="361" height="20"/>
@@ -95,6 +111,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VXS-i8-nYD">
                                 <rect key="frame" x="16" y="227" width="361" height="20"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Review - / 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lh-ez-ZTG">
+                                <rect key="frame" x="106" y="656" width="181" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" systemColor="tableCellBlueTextColor"/>
+                                <color key="highlightedColor" systemColor="secondarySystemBackgroundColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -122,6 +146,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Recipe Book" id="I1P-TS-xp3"/>
+                    <connections>
+                        <outlet property="ReviewButton" destination="P0z-rZ-Hri" id="j1g-oU-7ol"/>
+                        <outlet property="landingPageReviewLabel" destination="3lh-ez-ZTG" id="23P-2T-gAe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -135,60 +163,406 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i8q-2d-rT8">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i8q-2d-rT8">
                                 <rect key="frame" x="16" y="191" width="361" height="613"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ifK-mW-8no">
-                                        <rect key="frame" x="0.0" y="0.0" width="361" height="613"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Homemade-Pizza_EXPS_FT23_376_EC_120123_3" translatesAutoresizingMaskIntoConstraints="NO" id="TaT-Q7-H0Y">
+                                        <rect key="frame" x="-307.66666666666669" y="-160" width="976.33333333333348" height="352"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="352" id="LMo-5b-Y29"/>
+                                            <constraint firstAttribute="width" constant="976" id="XnH-qw-GbP"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Yf2-qs-aW7">
+                                        <rect key="frame" x="0.0" y="194" width="361" height="419"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="419" id="6y3-hO-lyl"/>
+                                        </constraints>
+                                        <string key="text">Ingredients
+
+For the dough:
+3/4 cup lukewarm water
+1 teaspoon active dry yeast
+2 cups all-purpose flour, plus more for kneading
+3/4 teaspoon salt
+2 teaspoons olive oil, divided
+
+For the toppings:
+1/2 cup pizza sauce, such as classic red sauce or a white sauce
+1 to 2 cups shredded cheese: one or a combination of mozzarella, provolone, Parmesan, fontina, romano, or asiago cheese
+
+Topping options: sautéed onions or mushrooms, sliced red peppers, pepperoni, cooked sausage, cooked bacon, etc.
+
+
+Instructions
+
+Arrange a rack in the bottom third of the oven, place a rimmed baking sheet on the rack, and heat the oven to 450°F. Meanwhile, make the dough.
+
+Pour 3/4 cup lukewarm water into a medium bowl. Sprinkle 1 teaspoon active dry yeast over the water, and let stand until the yeast is dissolved and foamy, 3 to 5 minutes.
+
+Add 2 cups all-purpose flour and 3/4 teaspoon salt. Mix with a stiff spatula or wooden spoon until floury, shaggy dough forms. 
+
+Turn the dough out onto a work surface and knead until it forms a smooth, slightly tacky ball that springs back when you poke it, 5 to 8 minutes. If the dough sticks to your hands like bubblegum, add a tablespoon of flour at a time until it’s easier to work with; avoid adding too much flour if possible.
+
+Cover the dough with the upside-down bowl or a clean kitchen towel and let sit while you prepare the pizza toppings, about 10 minutes.
+
+Divide the dough into 2 equal pieces. Working with one piece of dough at a time, stretch or roll it into a thin, 10- to 12-inch round. Form from the middle of the dough outwards, using the heel of your hand to gently press and stretch the dough until it's about a 1/4-inch thick or less. For an extra-thin crust, roll it with a rolling pin. If the dough starts to shrink back, let it rest for 5 minutes and then try rolling again.
+
+Carefully remove the preheated baking sheet from the oven and place it upside down on a wire rack. Transfer the dough directly onto the upside-down baking sheet. Brush the dough with 1 teaspoon of the oil. Spread 1/4 cup sauce into a thin layer onto dough, leaving a 1/2-inch border. Sprinkle on the cheese and other toppings.
+
+Bake until the crust is golden-brown and the cheese is melted and browned in spots, 8 to 12 minutes. Remove the pizza from the oven and cool for about 5 minutes before slicing and serving. Repeat with the remaining dough and toppings.
+</string>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="Yf2-qs-aW7" firstAttribute="bottom" secondItem="jtv-8r-2Eg" secondAttribute="bottom" id="09q-Xa-3rO"/>
+                                    <constraint firstItem="Yf2-qs-aW7" firstAttribute="top" secondItem="TaT-Q7-H0Y" secondAttribute="bottom" constant="2" id="4Eo-qJ-gIK"/>
+                                    <constraint firstAttribute="bottom" secondItem="Yf2-qs-aW7" secondAttribute="bottom" id="HLA-Ss-1mA"/>
+                                    <constraint firstItem="Yf2-qs-aW7" firstAttribute="leading" secondItem="jtv-8r-2Eg" secondAttribute="leading" id="Uu7-hs-RoO"/>
+                                    <constraint firstItem="Yf2-qs-aW7" firstAttribute="centerX" secondItem="i8q-2d-rT8" secondAttribute="centerX" id="Uwf-qy-3h8"/>
+                                    <constraint firstAttribute="trailing" secondItem="TaT-Q7-H0Y" secondAttribute="trailing" constant="-307" id="chE-st-NeL"/>
+                                    <constraint firstItem="TaT-Q7-H0Y" firstAttribute="centerX" secondItem="Yf2-qs-aW7" secondAttribute="centerX" id="fhd-HM-Jg7"/>
+                                </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="tH5-7g-34D"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="jtv-8r-2Eg"/>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZHD-Ya-8Gf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="i8q-2d-rT8" firstAttribute="top" secondItem="ZHD-Ya-8Gf" secondAttribute="top" constant="29" id="97Q-ol-gyo"/>
+                            <constraint firstItem="i8q-2d-rT8" firstAttribute="trailing" secondItem="Fuf-2v-zRY" secondAttribute="trailingMargin" id="IEA-it-13k"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="i8q-2d-rT8" secondAttribute="bottom" constant="-20" id="KcD-92-zTP"/>
+                            <constraint firstItem="i8q-2d-rT8" firstAttribute="leading" secondItem="Fuf-2v-zRY" secondAttribute="leadingMargin" id="Yyt-rj-Zrp"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="4s0-oG-ipH">
+                    <navigationItem key="navigationItem" title="Pizza" id="4s0-oG-ipH">
                         <barButtonItem key="backBarButtonItem" title="Recipe Book" id="N1c-Kh-LrW"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ldh-xE-K5P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-402.29007633587787" y="776.76056338028172"/>
+            <point key="canvasLocation" x="-770.2290076335878" y="769.71830985915494"/>
         </scene>
         <!--Recipe Book Review-->
         <scene sceneID="TLw-Hz-2nc">
             <objects>
-                <viewController title="Recipe Book Review" id="cIY-eY-4Ec" sceneMemberID="viewController">
+                <viewController title="Recipe Book Review" id="cIY-eY-4Ec" customClass="ViewController" customModule="EliKrouseAssign3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yYU-cI-YTi">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Review" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAY-R8-Yy0">
+                                <rect key="frame" x="53" y="30" width="286" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" systemColor="systemIndigoColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Your Review - / 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaE-LR-GzC">
+                                <rect key="frame" x="106" y="376" width="181" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" systemColor="tableCellBlueTextColor"/>
+                                <color key="highlightedColor" systemColor="secondarySystemBackgroundColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UNB-ZZ-gXJ">
+                                <rect key="frame" x="9" y="137" width="375" height="34.333333333333343"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2KB-JS-dSU">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="starTapped:" destination="cIY-eY-4Ec" eventType="touchUpInside" id="wlm-K4-aEM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f71-3T-ApQ">
+                                        <rect key="frame" x="75" y="0.0" width="75" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="starTapped:" destination="cIY-eY-4Ec" eventType="touchUpInside" id="Jk9-Lg-rlI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yuF-qF-aLr">
+                                        <rect key="frame" x="150" y="0.0" width="75" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="starTapped:" destination="cIY-eY-4Ec" eventType="touchUpInside" id="ZIS-Gk-gMP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyH-SE-SEL">
+                                        <rect key="frame" x="225" y="0.0" width="75" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="starTapped:" destination="cIY-eY-4Ec" eventType="touchUpInside" id="GRE-OD-R47"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHL-2i-7Kl">
+                                        <rect key="frame" x="300" y="0.0" width="75" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="starTapped:" destination="cIY-eY-4Ec" eventType="touchUpInside" id="3IY-fA-ykq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSI-Rt-vDu">
+                                <rect key="frame" x="106" y="272" width="181" height="35"/>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Enter Review"/>
+                                <connections>
+                                    <action selector="postReviewButton:" destination="cIY-eY-4Ec" eventType="touchUpInside" id="bnl-wf-Hme"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="wut-Gv-OSK"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstItem="MaE-LR-GzC" firstAttribute="centerY" secondItem="yYU-cI-YTi" secondAttribute="centerY" id="2cM-PB-6yd"/>
+                            <constraint firstItem="UNB-ZZ-gXJ" firstAttribute="top" secondItem="uAY-R8-Yy0" secondAttribute="bottom" constant="71" id="2y8-Qy-z52"/>
+                            <constraint firstItem="MaE-LR-GzC" firstAttribute="top" secondItem="BSI-Rt-vDu" secondAttribute="bottom" constant="69" id="6eL-56-umV"/>
+                            <constraint firstItem="uAY-R8-Yy0" firstAttribute="top" secondItem="wut-Gv-OSK" secondAttribute="top" constant="30" id="JNm-ME-Ggp"/>
+                            <constraint firstItem="BSI-Rt-vDu" firstAttribute="leading" secondItem="MaE-LR-GzC" secondAttribute="leading" id="LEf-hq-lJc"/>
+                            <constraint firstItem="UNB-ZZ-gXJ" firstAttribute="leading" secondItem="wut-Gv-OSK" secondAttribute="leading" constant="9" id="OwD-cn-POa"/>
+                            <constraint firstItem="UNB-ZZ-gXJ" firstAttribute="centerX" secondItem="BSI-Rt-vDu" secondAttribute="centerX" id="P1w-tD-Uok"/>
+                            <constraint firstItem="uAY-R8-Yy0" firstAttribute="centerX" secondItem="yYU-cI-YTi" secondAttribute="centerX" id="ZLQ-yo-ihn"/>
+                            <constraint firstItem="uAY-R8-Yy0" firstAttribute="leading" secondItem="wut-Gv-OSK" secondAttribute="leading" constant="53" id="ack-eO-CKv"/>
+                            <constraint firstItem="BSI-Rt-vDu" firstAttribute="trailing" secondItem="MaE-LR-GzC" secondAttribute="trailing" id="efB-Lm-S7E"/>
+                            <constraint firstItem="wut-Gv-OSK" firstAttribute="bottom" secondItem="MaE-LR-GzC" secondAttribute="bottom" constant="343" id="qCh-b6-AGL"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Recipe Book Review" id="8rY-gh-Bv9"/>
+                    <connections>
+                        <outlet property="reviewPageReviewLabel" destination="MaE-LR-GzC" id="7PT-uK-SW9"/>
+                        <outlet property="starFiveButton" destination="tHL-2i-7Kl" id="ao4-dy-o18"/>
+                        <outlet property="starFourButton" destination="AyH-SE-SEL" id="E5c-aH-gVG"/>
+                        <outlet property="starOneButton" destination="2KB-JS-dSU" id="nB4-DO-q6P"/>
+                        <outlet property="starThreeButton" destination="yuF-qF-aLr" id="pyx-DX-zwi"/>
+                        <outlet property="starTwoButton" destination="f71-3T-ApQ" id="w1P-tI-qKW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gEr-mP-B4w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="697" y="777"/>
+            <point key="canvasLocation" x="1177.8625954198474" y="-18.30985915492958"/>
+        </scene>
+        <!--RecipeView-->
+        <scene sceneID="kV4-SC-GQ5">
+            <objects>
+                <viewController title="RecipeView" id="1tl-nu-YlY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QPQ-xu-pYl">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Cd-TT-YQg">
+                                <rect key="frame" x="16" y="191" width="361" height="613"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="F0s-HE-3og">
+                                        <rect key="frame" x="0.0" y="194" width="361" height="419"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="419" id="WGR-WA-a8o"/>
+                                        </constraints>
+                                        <string key="text">Ingredients needed
+Beef Chuck Roast, cut into 2-inch chunks, excess fat removed
+Kosher Salt or sea salt, adjust to taste
+Ground Black Pepper
+Gluten-free All-Purpose Flour, or Whole Wheat for non-gluten, any flour works.
+Olive Oil: I also like using avocado oil
+Yellow Onion, Chopped Large
+Garlic Cloves, minced: don’t try using garlic powder. Fresh garlic adds so much more flavor.
+Carrot, or two small-medium, cut into 2-inch chunks
+Yukon Gold Potatoes, diced into 2-inch pieces
+Beef Broth: I like beef broth over chicken for this recipe.
+Tomato Paste
+Worcestershire Sauce
+Bay Leaves
+Fresh Thyme Leaves, to garnish
+
+
+How to make homemade beef stew
+Let’s first talk about how I made this easy vegetable beef stew recipe.
+Preheat oven: While prepping everything else, preheat the oven to 325° F.
+Step 1: Chop the carrots, potatoes, and onions.
+Step 2: Prep Beef: Season the beef chunks on all sides with salt and pepper. Sprinkle the flour over and toss the seasoned beef to coat it on all sides.
+Step 3: Heat the olive oil in a large Dutch oven or skillet over medium heat. Brown the beef in batches, on all sides, for 3-4 minutes per batch.
+Step 4: Next, add the onions, garlic, and chopped carrots over the seared beef.
+Step 5: Cook everything, stirring occasionally, for 2-3 minutes or until lightly browned.
+Step 6: Add the potatoes, beef broth, tomato paste, bay leaf, thyme, and Worcestershire sauce, and use a wooden spoon to scrape the browned bits from the bottom of the pot.
+Step 7: Bring the mixture to a simmer, stirring, and return the beef to the pot.
+Step 8: Cover the Dutch oven (pot), and transfer to the preheated oven. Cook the stew for 2-2.5 hours, or until the beef is very tender. Remove the bay leaf. Taste the stew and season with additional salt and pepper, if necessary. Serve warm.
+Note: To finish cooking this beef stew on the stovetop, cover the pot and let it simmer for 60-90 using medium to low heat. Check it occasionally to see if the beef is tender using a fork and add some broth or water if the sauce starts to dry out.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Classic-beef-stew-10" translatesAutoresizingMaskIntoConstraints="NO" id="tvm-Ae-dHN">
+                                        <rect key="frame" x="-258.66666666666663" y="-266" width="878.33333333333337" height="452"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="878" id="lb5-It-5HV"/>
+                                            <constraint firstAttribute="height" constant="452" id="sch-1K-AaH"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="F0s-HE-3og" firstAttribute="bottom" secondItem="yVB-cQ-hHu" secondAttribute="bottom" id="GDK-FQ-1C5"/>
+                                    <constraint firstItem="F0s-HE-3og" firstAttribute="top" secondItem="tvm-Ae-dHN" secondAttribute="bottom" constant="8" id="MiL-Qk-hKn"/>
+                                    <constraint firstItem="tvm-Ae-dHN" firstAttribute="centerX" secondItem="F0s-HE-3og" secondAttribute="centerX" id="TNg-D1-dst"/>
+                                    <constraint firstItem="F0s-HE-3og" firstAttribute="leading" secondItem="yVB-cQ-hHu" secondAttribute="leading" id="WzY-IB-OKb"/>
+                                    <constraint firstItem="F0s-HE-3og" firstAttribute="centerX" secondItem="5Cd-TT-YQg" secondAttribute="centerX" id="XAf-Ov-lvc"/>
+                                    <constraint firstAttribute="bottom" secondItem="F0s-HE-3og" secondAttribute="bottom" id="kKR-km-Hao"/>
+                                    <constraint firstAttribute="trailing" secondItem="tvm-Ae-dHN" secondAttribute="trailing" constant="-258" id="vq0-QQ-9hh"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Ot1-Ah-MjT"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="yVB-cQ-hHu"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2Mb-kq-dDX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5Cd-TT-YQg" firstAttribute="trailing" secondItem="QPQ-xu-pYl" secondAttribute="trailingMargin" id="A7f-p1-xWY"/>
+                            <constraint firstItem="5Cd-TT-YQg" firstAttribute="top" secondItem="2Mb-kq-dDX" secondAttribute="top" constant="29" id="UAK-Ug-fle"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="5Cd-TT-YQg" secondAttribute="bottom" constant="-20" id="Ucp-xr-6M5"/>
+                            <constraint firstItem="5Cd-TT-YQg" firstAttribute="leading" secondItem="QPQ-xu-pYl" secondAttribute="leadingMargin" id="XSV-eA-3Pt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Stew" id="rMB-cz-qgb">
+                        <barButtonItem key="backBarButtonItem" title="Recipe Book" id="PZE-KB-uPm"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mdb-HN-ZaA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125.95419847328243" y="769.71830985915494"/>
+        </scene>
+        <!--RecipeView-->
+        <scene sceneID="YzK-ER-pPI">
+            <objects>
+                <viewController title="RecipeView" id="KR1-fm-3Pj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qmd-0T-j9G">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mUX-xs-aMT">
+                                <rect key="frame" x="16" y="191" width="361" height="613"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AOg-7q-Nzk">
+                                        <rect key="frame" x="0.0" y="195" width="361" height="419"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="419" id="COi-3l-tLz"/>
+                                        </constraints>
+                                        <string key="text">Ingredients
+
+1 tbsp oil
+1 lb chicken breast cut into small pieces
+1 tbsp taco seasoning
+1/2 large bell pepper diced, any color
+1/2 yellow onion diced
+2 tbsp unsalted butter
+6 flour tortillas
+2 cups Mexican cheese
+
+
+
+
+Instructions
+
+Preheat a skillet with oil on medium heat. Add in the chicken and taco seasoning. Cook for 4 minutes.
+Add in the bell pepper and onion, cook for another 5 minutes or until chicken and veggies gain color and are cooked through. Set aside.
+On a clean skillet, add a bit of butter or oil and place a tortilla on top. Add Mexican cheese and chicken mixture to one half of the tortilla. Top with more cheese. Fold the tortilla over to close.
+Cook for a few minutes and once the tortilla is golden on one side, flip and cook for a few more minutes until the second side is golden brown. Make sure that the cheese has melted. Repeat with the rest of the quesadillas.
+Serve while the quesadillas are still warm!
+</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Chicken-Quesadilla-Square" translatesAutoresizingMaskIntoConstraints="NO" id="KXc-hy-lCU">
+                                        <rect key="frame" x="-155.66666666666666" y="-171" width="672.33333333333337" height="358"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="358" id="UyG-cn-cNZ"/>
+                                            <constraint firstAttribute="width" constant="672" id="fAt-05-lyj"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="AOg-7q-Nzk" firstAttribute="leading" secondItem="EZf-Hp-Qox" secondAttribute="leading" id="2gC-of-eFV"/>
+                                    <constraint firstItem="KXc-hy-lCU" firstAttribute="top" secondItem="mUX-xs-aMT" secondAttribute="top" constant="-171" id="4cU-os-UVg"/>
+                                    <constraint firstItem="AOg-7q-Nzk" firstAttribute="top" secondItem="KXc-hy-lCU" secondAttribute="bottom" constant="8" id="AfM-he-V80"/>
+                                    <constraint firstAttribute="bottom" secondItem="AOg-7q-Nzk" secondAttribute="bottom" constant="-1" id="Ffq-ai-lgV"/>
+                                    <constraint firstItem="KXc-hy-lCU" firstAttribute="centerX" secondItem="AOg-7q-Nzk" secondAttribute="centerX" id="JUp-Aj-9gI"/>
+                                    <constraint firstItem="AOg-7q-Nzk" firstAttribute="centerX" secondItem="mUX-xs-aMT" secondAttribute="centerX" id="UHY-Th-a1N"/>
+                                    <constraint firstAttribute="trailing" secondItem="KXc-hy-lCU" secondAttribute="trailing" constant="-155" id="UNR-6w-km8"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="039-Dr-Vwg"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="EZf-Hp-Qox"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oE4-Ph-D5q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mUX-xs-aMT" firstAttribute="leading" secondItem="Qmd-0T-j9G" secondAttribute="leadingMargin" id="Nnu-6Q-mjq"/>
+                            <constraint firstItem="mUX-xs-aMT" firstAttribute="trailing" secondItem="Qmd-0T-j9G" secondAttribute="trailingMargin" id="V1i-Xn-ooa"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="mUX-xs-aMT" secondAttribute="bottom" constant="-20" id="Yqt-Zp-aBr"/>
+                            <constraint firstItem="mUX-xs-aMT" firstAttribute="top" secondItem="oE4-Ph-D5q" secondAttribute="top" constant="29" id="ebl-TU-dvw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Chicken Quesadillas" id="HUR-hb-F7c">
+                        <barButtonItem key="backBarButtonItem" title="Recipe Book" id="mPt-Sa-Eb1"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t1P-8v-rGY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1012.9770992366412" y="769.71830985915494"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Chicken-Quesadilla-Square" width="1200" height="1200"/>
+        <image name="Classic-beef-stew-10" width="1080" height="1350"/>
+        <image name="Homemade-Pizza_EXPS_FT23_376_EC_120123_3" width="1200" height="1200"/>
+        <image name="pngtree-cooking-cooking-background-picture-image_500149" width="1200" height="1799"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemCyanColor">
             <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tableCellBlueTextColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
